@@ -1211,8 +1211,13 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
   .focus__content {
     row-gap: 2rem;
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .integrations__block {
