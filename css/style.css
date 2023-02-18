@@ -1273,10 +1273,13 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   }
 
   .focus__container {
-    padding-bottom: 32px;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+  }
+
+  .focus__content {
+    margin-bottom: 2rem;
   }
 }
 
