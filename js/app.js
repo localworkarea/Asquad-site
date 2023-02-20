@@ -765,13 +765,13 @@
             scrollWatcherIntersecting(entry, targetElement) {
                 if (entry.isIntersecting) {
                     !targetElement.classList.contains("_watcher-view") ? targetElement.classList.add("_watcher-view") : null;
-                    if (targetElement.classList.contains("_watcher-view") && targetElement.classList.contains("focus")) document.documentElement.classList.add("header-white");
-                    if (targetElement.classList.contains("_watcher-view") && targetElement.classList.contains("integrations")) document.documentElement.classList.add("header-black");
+                    if (targetElement.classList.contains("_header-hidden")) document.documentElement.classList.add("header-hidden");
+                    if (targetElement.classList.contains("_header-black")) document.documentElement.classList.add("header-black");
+                    if (targetElement.classList.contains("_header-white")) document.documentElement.classList.remove("header-black");
                     this.scrollWatcherLogging(`Я бачу ${targetElement.classList}, додав клас _watcher-view`);
                 } else {
                     targetElement.classList.contains("_watcher-view") ? targetElement.classList.remove("_watcher-view") : null;
-                    if (!targetElement.classList.contains("focus")) document.documentElement.classList.remove("header-black");
-                    if (!targetElement.classList.contains("integrations")) document.documentElement.classList.remove("header-white");
+                    if (targetElement.classList.contains("_header-hidden")) document.documentElement.classList.remove("header-hidden");
                     this.scrollWatcherLogging(`Я не бачу ${targetElement.classList}, прибрав клас _watcher-view`);
                 }
             }
@@ -1184,31 +1184,6 @@
                 }));
             }
         }), 0);
-        const animItems = document.querySelectorAll("._anim-items");
-        if (animItems.length > 0) {
-            window.addEventListener("scroll", animOnScroll);
-            function animOnScroll() {
-                for (let index = 0; index < animItems.length; index++) {
-                    const animItem = animItems[index];
-                    const animItemHeight = animItem.offsetHeight;
-                    const animItemOffset = offset(animItem).top;
-                    const animStart = 4;
-                    let animItemPoint = window.innerHeight - animItemHeight / animStart;
-                    if (animItemHeight > window.innerHeight) animItemPoint = window.innerHeight - window.innerHeight / animStart;
-                    if (pageYOffset > animItemOffset - animItemPoint && pageYOffset < animItemOffset + animItemHeight) animItem.classList.add("_active"); else if (!animItem.classList.contains("_anim-no-hide")) animItem.classList.remove("_active");
-                }
-            }
-            function offset(el) {
-                const rect = el.getBoundingClientRect(), scrollLeft = window.pageXOffset || document.documentElement.scrollLeft, scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                return {
-                    top: rect.top + scrollTop,
-                    left: rect.left + scrollLeft
-                };
-            }
-            setTimeout((() => {
-                animOnScroll();
-            }), 300);
-        }
         window["FLS"] = true;
         isWebp();
         addTouchClass();
