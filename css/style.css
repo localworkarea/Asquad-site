@@ -546,11 +546,6 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   background-color: #101820;
 }
 
-.main__container {
-  z-index: 2;
-  position: relative;
-}
-
 .main__logo {
   display: -webkit-box;
   display: -ms-flexbox;
