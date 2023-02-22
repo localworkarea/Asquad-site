@@ -1199,10 +1199,18 @@
                     if (targetElement.classList.contains("_header-hidden")) document.documentElement.classList.add("header-hidden");
                     if (targetElement.classList.contains("_header-black")) document.documentElement.classList.add("header-black");
                     if (targetElement.classList.contains("_header-white")) document.documentElement.classList.remove("header-black");
+                    const animSlide = document.querySelector(".image-anim");
+                    if (targetElement.classList.contains("main")) animSlide.classList.add("_anim-main");
+                    if (targetElement.classList.contains("focus")) animSlide.classList.add("_anim-focus");
+                    if (targetElement.classList.contains("integrations")) animSlide.classList.add("_anim-integrations");
                     this.scrollWatcherLogging(`Я бачу ${targetElement.classList}, додав клас _watcher-view`);
                 } else {
                     targetElement.classList.contains("_watcher-view") ? targetElement.classList.remove("_watcher-view") : null;
                     if (targetElement.classList.contains("_header-hidden")) document.documentElement.classList.remove("header-hidden");
+                    const animSlide = document.querySelector(".image-anim");
+                    if (targetElement.classList.contains("focus")) animSlide.classList.remove("_anim-focus");
+                    if (targetElement.classList.contains("integrations")) animSlide.classList.remove("_anim-integrations");
+                    if (targetElement.classList.contains("main")) animSlide.classList.remove("_anim-main");
                     this.scrollWatcherLogging(`Я не бачу ${targetElement.classList}, прибрав клас _watcher-view`);
                 }
             }
