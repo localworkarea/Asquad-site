@@ -622,6 +622,12 @@ filter: invert(6%) sepia(30%) saturate(842%) hue-rotate(169deg) brightness(98%) 
 
 gray_dark #7B949D 
 filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%) contrast(79%);
+
+СПИСОК ВЫПОЛНИТЬ ПО САЙТУ:
+1) формы: а) выпадающий список номеров б) reset
+
+
+
 */
 
 .title-main {
@@ -670,10 +676,55 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 .mouse-wheel__wheel {
   position: absolute;
   top: 10%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: 38%;
+}
+
+@-webkit-keyframes mouse-move {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+
+  100% {
+    -webkit-transform: translateY(45px);
+            transform: translateY(45px);
+  }
+}
+
+@keyframes mouse-move {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+
+  100% {
+    -webkit-transform: translateY(45px);
+            transform: translateY(45px);
+  }
+}
+
+@-webkit-keyframes wheel-move {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+
+  100% {
+    -webkit-transform: translateY(45px);
+            transform: translateY(45px);
+  }
+}
+
+@keyframes wheel-move {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+
+  100% {
+    -webkit-transform: translateY(45px);
+            transform: translateY(45px);
+  }
 }
 
 .image-anim {
@@ -986,6 +1037,16 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   display: none;
 }
 
+.main.active-section .mouse-wheel__body {
+  -webkit-animation: mouse-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0s 6 alternate none;
+          animation: mouse-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0s 6 alternate none;
+}
+
+.main.active-section .mouse-wheel__wheel {
+  -webkit-animation: wheel-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0.2s 6 alternate none;
+          animation: wheel-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0.2s 6 alternate none;
+}
+
 .main__logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1138,6 +1199,16 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .awesome {
   background-color: #0062EB;
+}
+
+.awesome.active-section .mouse-wheel__body {
+  -webkit-animation: mouse-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0.7s 6 alternate none;
+          animation: mouse-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0.7s 6 alternate none;
+}
+
+.awesome.active-section .mouse-wheel__wheel {
+  -webkit-animation: wheel-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0.9s 6 alternate none;
+          animation: wheel-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0.9s 6 alternate none;
 }
 
 .awesome__container {
@@ -1648,10 +1719,6 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 }
 
 @media (min-width: 108.75em) {
-  .form-title {
-    font-size: 3rem;
-  }
-
   .title-main {
     font-size: 6rem;
   }
@@ -1730,6 +1797,10 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 @media (min-width: 48em) {
   .popup-form__content {
     padding-bottom: 2rem;
+  }
+
+  .form__subtitle {
+    font-size: 2.25rem;
   }
 
   .title-fourth {
@@ -1885,6 +1956,10 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 @media (min-width: 120em) {
   .popup-form__content {
     padding-top: 7.625rem;
+  }
+
+  .form-title {
+    font-size: 3rem;
   }
 
   .form__inputs {
@@ -2292,12 +2367,30 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
     padding-top: 4rem;
   }
 
+  .form-title {
+    font-size: 2.625rem;
+  }
+
   .form__inputs {
     row-gap: 1.5rem;
   }
 
   .form__inputs {
     margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .popup-form__content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .popup-form__content {
+    max-width: 100%;
+    border-radius: 0;
   }
 }
 
@@ -2327,7 +2420,11 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   }
 
   .form-title {
-    font-size: 2.625rem;
+    font-size: 1.625rem;
+  }
+
+  .form__subtitle {
+    font-size: 1rem;
   }
 
   .title-main {
@@ -2681,9 +2778,8 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
     padding: 0 1rem;
   }
 
-  .popup-form__content {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .form__head {
+    margin-bottom: 1.5rem;
   }
 
   .image-anim__img {
@@ -2783,7 +2879,38 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   }
 }
 
-@media (max-width: 23.43625em) {
+@media (max-width: 23.4375em) {
+  .popup-form__content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .form-btn {
+    font-size: 1rem;
+    height: 1.875rem;
+  }
+
+  .form__block:not(:last-child) {
+    margin-bottom: 2.625rem;
+  }
+
+  .form__label {
+    font-size: 0.875rem;
+  }
+
+  .form__input {
+    font-size: 1rem;
+    height: 1.875rem;
+  }
+
+  .form__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    row-gap: 1rem;
+  }
+
   .image-anim._anim-main .image-anim__img {
     -webkit-transform: translate(0%, 58%);
         -ms-transform: translate(0%, 58%);
@@ -2813,9 +2940,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   .main__logo img {
     height: 2rem;
   }
-}
 
-@media (max-width: 23.4375em) {
   .btns-options__logo {
     height: 9.25rem;
   }
@@ -2844,6 +2969,18 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 @supports not (padding-top: clamp( 4rem , 1.5833333333rem  +  5.0347222222vw , 7.625rem )) {
     .popup-form__content {
       padding-top: calc(4rem + 3.625 * (100vw - 48rem) / 72);
+    }
+}
+
+@supports (font-size: clamp( 2.625rem , 2.375rem  +  0.5208333333vw , 3rem )) {
+    .form-title {
+      font-size: clamp( 2.625rem , 2.375rem  +  0.5208333333vw , 3rem );
+    }
+}
+
+@supports not (font-size: clamp( 2.625rem , 2.375rem  +  0.5208333333vw , 3rem )) {
+    .form-title {
+      font-size: calc(2.625rem + 0.375 * (100vw - 48rem) / 72);
     }
 }
 
@@ -2882,6 +3019,30 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 @supports not (padding-bottom: clamp( 1rem , 0.2857142857rem  +  3.5714285714vw , 2rem )) {
     .popup-form__content {
       padding-bottom: calc(1rem + 1 * (100vw - 20rem) / 28);
+    }
+}
+
+@supports (font-size: clamp( 1.625rem , 0.9107142857rem  +  3.5714285714vw , 2.625rem )) {
+    .form-title {
+      font-size: clamp( 1.625rem , 0.9107142857rem  +  3.5714285714vw , 2.625rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.625rem , 0.9107142857rem  +  3.5714285714vw , 2.625rem )) {
+    .form-title {
+      font-size: calc(1.625rem + 1 * (100vw - 20rem) / 28);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.1071428571rem  +  4.4642857143vw , 2.25rem )) {
+    .form__subtitle {
+      font-size: clamp( 1rem , 0.1071428571rem  +  4.4642857143vw , 2.25rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.1071428571rem  +  4.4642857143vw , 2.25rem )) {
+    .form__subtitle {
+      font-size: calc(1rem + 1.25 * (100vw - 20rem) / 28);
     }
 }
 
@@ -3175,18 +3336,6 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 }
 
 @media (min-width: 20em) and (max-width: 108.75em) {
-@supports (font-size: clamp( 2.625rem , 2.5404929577rem  +  0.4225352113vw , 3rem )) {
-    .form-title {
-      font-size: clamp( 2.625rem , 2.5404929577rem  +  0.4225352113vw , 3rem );
-    }
-}
-
-@supports not (font-size: clamp( 2.625rem , 2.5404929577rem  +  0.4225352113vw , 3rem )) {
-    .form-title {
-      font-size: calc(2.625rem + 0.375 * (100vw - 20rem) / 88.75);
-    }
-}
-
 @supports (font-size: clamp( 2.375rem , 1.5580985915rem  +  4.0845070423vw , 6rem )) {
     .title-main {
       font-size: clamp( 2.375rem , 1.5580985915rem  +  4.0845070423vw , 6rem );
