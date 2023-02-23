@@ -1037,6 +1037,10 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   display: none;
 }
 
+.main {
+  padding-top: 2rem;
+}
+
 .main.active-section .mouse-wheel__body {
   -webkit-animation: mouse-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0s 6 alternate none;
           animation: mouse-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0s 6 alternate none;
@@ -1812,10 +1816,6 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   }
 
   .main {
-    padding-top: 2rem;
-  }
-
-  .main {
     padding-bottom: 2rem;
   }
 
@@ -2460,10 +2460,6 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   }
 
   .main {
-    padding-top: 1rem;
-  }
-
-  .main {
     padding-bottom: 1rem;
   }
 
@@ -2937,6 +2933,10 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
     font-size: 1rem;
   }
 
+  .main {
+    padding-top: 1rem;
+  }
+
   .main__logo img {
     height: 2rem;
   }
@@ -3090,18 +3090,6 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 @supports not (padding-top: clamp( 1rem , 0.2857142857rem  +  3.5714285714vw , 2rem )) {
     .header {
-      padding-top: calc(1rem + 1 * (100vw - 20rem) / 28);
-    }
-}
-
-@supports (padding-top: clamp( 1rem , 0.2857142857rem  +  3.5714285714vw , 2rem )) {
-    .main {
-      padding-top: clamp( 1rem , 0.2857142857rem  +  3.5714285714vw , 2rem );
-    }
-}
-
-@supports not (padding-top: clamp( 1rem , 0.2857142857rem  +  3.5714285714vw , 2rem )) {
-    .main {
       padding-top: calc(1rem + 1 * (100vw - 20rem) / 28);
     }
 }
