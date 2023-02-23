@@ -1393,8 +1393,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .manage {
   background-color: #F0F4F5;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .manage.active-section .anim-manage__item img {
@@ -1459,7 +1458,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   overflow: hidden;
   -webkit-filter: drop-shadow(0px 0px 20.4796px rgba(123, 148, 157, 0.5));
           filter: drop-shadow(0px 0px 20.4796px rgba(123, 148, 157, 0.5));
-  border-radius: 15px;
+  border-radius: 0.9375rem;
 }
 
 .anim-manage__item img {
@@ -1502,8 +1501,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .options {
   background-color: #F0F4F5;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .options__container {
@@ -1521,7 +1519,6 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
           column-gap: 2rem;
   min-height: 100%;
   position: relative;
-  overflow-x: clip;
 }
 
 .options__block {
@@ -1745,7 +1742,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
           column-gap: 2rem;
   min-height: 100%;
   position: relative;
-  overflow-x: clip;
+  overflow-x: auto;
 }
 
 .custom__block {
@@ -1849,9 +1846,6 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   background-color: #101820;
   -webkit-box-shadow: 0px 0px 25px rgba(123, 148, 157, 0.5);
           box-shadow: 0px 0px 25px rgba(123, 148, 157, 0.5);
@@ -1860,24 +1854,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   top: 0;
   right: 0;
   height: 100%;
-  overflow: auto;
-}
-
-.api__typing::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 2rem;
-  height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#101820), to(rgba(16, 24, 32, 0)));
-  background: -o-linear-gradient(left, #101820 0%, rgba(16, 24, 32, 0) 100%);
-  background: linear-gradient(90deg, #101820 0%, rgba(16, 24, 32, 0) 100%);
-  -webkit-transform: rotate(-180deg);
-      -ms-transform: rotate(-180deg);
-          transform: rotate(-180deg);
-  z-index: 3;
-  display: none;
+  overflow-x: auto;
 }
 
 .api__typing-body {
@@ -1886,8 +1863,10 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   font-size: 1.125rem;
   line-height: 1.5;
   font-weight: 500;
+  overflow-x: auto;
   margin-top: 0;
   margin-bottom: 0;
+  height: 16.875rem;
 }
 
 .typing__numb {
@@ -2473,7 +2452,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
   .api__typing {
     width: 100%;
-    height: auto;
+    height: 28.75rem;
     top: unset;
     bottom: 0;
     border-radius: 0.9375rem 0.9375rem 0 0;
@@ -2481,8 +2460,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
   .api__typing-body {
     width: 48.1875rem;
-    padding: 6.125rem 0rem;
-    overflow: auto;
+    margin: 5.625rem 2rem;
   }
 }
 
@@ -3141,7 +3119,6 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    overflow-x: clip;
     width: 48.8125rem;
   }
 
@@ -3292,6 +3269,10 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
     padding: 1rem 2rem;
   }
 
+  .api__typing {
+    height: 27.125rem;
+  }
+
   .api__typing-body {
     font-size: 1rem;
     line-height: 1.3;
@@ -3410,7 +3391,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   }
 
   .api__typing-body {
-    padding: 4.0625rem 0rem;
+    margin: 4.6875rem 1rem;
   }
 }
 
@@ -4466,4 +4447,24 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
       width: calc(46.5625rem + 6.5625 * (100vw - 75rem) / 45);
     }
 }
+}
+
+@media (max-height: 695px) {
+  .api__typing {
+    height: 21.25rem;
+  }
+
+  .api__typing-body {
+    margin: 3.125rem 1rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .api__typing {
+    height: 18.125rem;
+  }
+
+  .api__typing-body {
+    margin: 1.875rem 1rem;
+  }
 }

@@ -1754,6 +1754,7 @@
                     if (targetElement.classList.contains("main")) animSlide.classList.add("_anim-main");
                     if (targetElement.classList.contains("focus")) animSlide.classList.add("_anim-focus");
                     if (targetElement.classList.contains("integrations")) animSlide.classList.add("_anim-integrations");
+                    if (targetElement.classList.contains("api")) ;
                     this.scrollWatcherLogging(`Я бачу ${targetElement.classList}, додав клас _watcher-view`);
                 } else {
                     targetElement.classList.contains("_watcher-view") ? targetElement.classList.remove("_watcher-view") : null;
@@ -2218,7 +2219,7 @@
                 }));
             }
         }), 0);
-        var typed = __webpack_require__(614);
+        var lib_typed = __webpack_require__(614);
         const resetBtn = document.querySelectorAll(".reset-btn");
         resetBtn.forEach((item => {
             item.addEventListener("click", resetInput);
@@ -2226,13 +2227,19 @@
         function resetInput() {
             document.querySelector(".form").reset();
         }
-        new typed("#typed", {
-            stringsElement: "#typed-strings",
-            typeSpeed: 5,
-            loop: false,
-            loopCount: 1 / 0,
-            showCursor: false
-        });
+        var $is_typed_call = false;
+        document.addEventListener("watcherCallback", (function(e) {
+            if (e.detail.entry.target.classList.contains("api") && e.detail.entry.isIntersecting) if (!$is_typed_call) {
+                new lib_typed("#typed", {
+                    stringsElement: "#typed-strings",
+                    typeSpeed: 5,
+                    loop: false,
+                    loopCount: 1 / 0,
+                    showCursor: false
+                });
+                $is_typed_call = true;
+            }
+        }));
         window["FLS"] = true;
         isWebp();
         addTouchClass();
