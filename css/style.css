@@ -1042,13 +1042,13 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 }
 
 .main.active-section .mouse-wheel__body {
-  -webkit-animation: mouse-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0s 6 alternate none;
-          animation: mouse-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0s 6 alternate none;
+  -webkit-animation: mouse-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 1s 6 alternate none;
+          animation: mouse-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 1s 6 alternate none;
 }
 
 .main.active-section .mouse-wheel__wheel {
-  -webkit-animation: wheel-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0.2s 6 alternate none;
-          animation: wheel-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 0.2s 6 alternate none;
+  -webkit-animation: wheel-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 1.2s 6 alternate none;
+          animation: wheel-move 1.3s cubic-bezier(0.55, 0.085, 0, 0.99) 1.2s 6 alternate none;
 }
 
 .main__logo {
