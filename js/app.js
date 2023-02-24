@@ -1397,7 +1397,7 @@
                         this.isOpen = true;
                         setTimeout((() => {
                             this._focusTrap();
-                        }), 500);
+                        }), 1e3);
                         this.options.on.afterOpen(this);
                         document.dispatchEvent(new CustomEvent("afterPopupOpen", {
                             detail: {
@@ -1438,7 +1438,7 @@
                 }));
                 setTimeout((() => {
                     this._focusTrap();
-                }), 50);
+                }), 1e3);
                 this.popupLogging(`Закрив попап`);
             }
             _getHash() {
