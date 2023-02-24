@@ -1040,6 +1040,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 }
 
 .main {
+  overflow: auto;
   padding-top: 2rem;
 }
 
@@ -1095,6 +1096,10 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .touch .main__mouse-wheel {
   display: none;
+}
+
+.focus {
+  overflow: auto;
 }
 
 .focus__container {
@@ -1205,6 +1210,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .awesome {
   background-color: #0062EB;
+  overflow: auto;
 }
 
 .awesome.active-section .mouse-wheel__body {
@@ -1251,6 +1257,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .industries {
   background-color: #0062EB;
+  overflow: auto;
 }
 
 .industries.active-section .industries__img {
@@ -1331,6 +1338,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .choose {
   background-color: #0062EB;
+  overflow: auto;
 }
 
 .choose__container {
@@ -1393,7 +1401,8 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .manage {
   background-color: #F0F4F5;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .manage.active-section .anim-manage__item img {
@@ -1501,7 +1510,8 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .options {
   background-color: #F0F4F5;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .options__container {
@@ -1704,7 +1714,8 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .custom {
   background-color: #F0F4F5;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .custom.active-section .anim-custom__item {
@@ -1810,6 +1821,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .api {
   background-color: #F0F4F5;
+  overflow: auto;
   position: relative;
 }
 
@@ -1896,6 +1908,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .routing {
   background-color: #101820;
+  overflow: auto;
   position: relative;
 }
 
@@ -1945,6 +1958,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .hold {
   background-color: #101820;
+  overflow: auto;
 }
 
 .hold.active-section .mouse-wheel__body {
@@ -1959,6 +1973,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
 .product {
   background-color: #101820;
+  overflow: auto;
 }
 
 .product__container {
@@ -3464,6 +3479,18 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   }
 }
 
+@media (max-width: 47.99875em) and (max-height: 695px) {
+  .api__typing {
+    height: 21.25rem;
+  }
+}
+
+@media (max-width: 47.99875em) and (max-height: 600px) {
+  .api__typing {
+    height: 18.125rem;
+  }
+}
+
 @media (max-width: 29.99875em) {
   [class*=__container] {
     padding: 0 1rem;
@@ -4956,20 +4983,12 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 }
 
 @media (max-height: 695px) {
-  .api__typing {
-    height: 21.25rem;
-  }
-
   .api__typing-body {
     margin: 3.125rem 1rem;
   }
 }
 
 @media (max-height: 600px) {
-  .api__typing {
-    height: 18.125rem;
-  }
-
   .api__typing-body {
     margin: 1.875rem 1rem;
   }
