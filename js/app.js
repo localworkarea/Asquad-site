@@ -4402,7 +4402,6 @@
         function initSliders() {
             if (document.querySelector(".product__slider")) new core(".product__slider", {
                 modules: [ Navigation ],
-                freeMode: true,
                 speed: 800,
                 breakpoints: {
                     320: {
@@ -4426,7 +4425,7 @@
                         spaceBetween: 63
                     },
                     1500: {
-                        slidesPerView: 2.7,
+                        slidesPerView: 2.5,
                         spaceBetween: 271
                     }
                 },
