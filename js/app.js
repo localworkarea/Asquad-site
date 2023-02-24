@@ -1397,7 +1397,7 @@
                         this.isOpen = true;
                         setTimeout((() => {
                             this._focusTrap();
-                        }), 50);
+                        }), 500);
                         this.options.on.afterOpen(this);
                         document.dispatchEvent(new CustomEvent("afterPopupOpen", {
                             detail: {
@@ -4404,13 +4404,10 @@
                 modules: [ Navigation ],
                 observer: true,
                 observeParents: true,
+                freeMode: true,
                 autoHeight: true,
                 speed: 800,
                 grabCursor: true,
-                mousewheel: {
-                    sensitivity: 1,
-                    eventsTarget: ".product__container"
-                },
                 breakpoints: {
                     320: {
                         slidesPerView: 1.2,
