@@ -4402,12 +4402,8 @@
         function initSliders() {
             if (document.querySelector(".product__slider")) new core(".product__slider", {
                 modules: [ Navigation ],
-                observer: true,
-                observeParents: true,
                 freeMode: true,
-                autoHeight: true,
                 speed: 800,
-                grabCursor: true,
                 breakpoints: {
                     320: {
                         slidesPerView: 1.2,

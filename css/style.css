@@ -2724,7 +2724,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
   .api__typing {
     width: 100%;
-    height: 28.75rem;
+    height: 26.875rem;
     top: unset;
     bottom: 0;
     border-radius: 0.9375rem 0.9375rem 0 0;
@@ -2732,7 +2732,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
 
   .api__typing-body {
     width: 48.1875rem;
-    margin: 5.625rem 2rem;
+    margin: 5rem 2rem;
   }
 }
 
@@ -3133,7 +3133,7 @@ filter: invert(69%) sepia(18%) saturate(389%) hue-rotate(150deg) brightness(80%)
   }
 
   .options__block .block-info__title {
-    max-width: 17.375rem;
+    max-width: 20.75rem;
     margin: 0 auto 2rem;
   }
 
