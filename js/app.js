@@ -947,7 +947,7 @@
             }));
         },
         699: (module, __unused_webpack_exports, __webpack_require__) => {
-            __webpack_require__(197);
+            module.exports = __webpack_require__(197);
         },
         614: function(module) {
             /*!
@@ -8177,7 +8177,7 @@
         const da = new DynamicAdapt("max");
         da.init();
         var lib_typed = __webpack_require__(614);
-        __webpack_require__(699);
+        var intl_tel_input = __webpack_require__(699);
         const resetBtn = document.querySelectorAll(".reset-btn");
         resetBtn.forEach((item => {
             item.addEventListener("click", resetInput);
@@ -8198,6 +8198,18 @@
                 $is_typed_call = true;
             }
         }));
+        const input = document.querySelector("#phone");
+        intl_tel_input(input, {
+            singleDialCode: true,
+            preferenceCountries: [ "us", "gb", "ua" ],
+            autoPlaceholder: "aggressive"
+        });
+        const input2 = document.querySelector("#phone_2");
+        intl_tel_input(input2, {
+            singleDialCode: true,
+            preferenceCountries: [ "us", "gb", "ua" ],
+            autoPlaceholder: "aggressive"
+        });
         window["FLS"] = true;
         isWebp();
         addTouchClass();

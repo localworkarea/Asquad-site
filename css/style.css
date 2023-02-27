@@ -2436,11 +2436,24 @@ button:disabled {
 
 .iti__selected-flag {
   padding: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .iti__selected-flag .iti__flag {
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.iti__flag {
+  -webkit-transform: scale(1.4);
+      -ms-transform: scale(1.4);
+          transform: scale(1.4);
 }
 
 .iti__arrow {
@@ -2464,21 +2477,6 @@ button:disabled {
 
 .iti__country-list::-webkit-scrollbar {
   width: 0;
-}
-
-.iti-mobile .iti--container {
-  top: 4rem;
-  left: 2rem;
-  position: absolute;
-}
-
-.iti-mobile .iti__country-list {
-  max-height: 480px;
-  width: 440px;
-}
-
-.iti-mobile .iti__country {
-  padding: 10px 10px;
 }
 
 .header {
@@ -6263,6 +6261,12 @@ button:disabled {
   }
 }
 
+@media (max-width: 510px) {
+  .iti__country-list {
+    max-width: 25rem;
+  }
+}
+
 @media (max-width: 500px) {
   .iti__country-list {
     white-space: normal;
@@ -6696,6 +6700,26 @@ button:disabled {
   .image-anim__img {
     left: -18%;
     width: 140%;
+  }
+
+  .iti__country {
+    padding: 0.75rem 1rem;
+  }
+
+  .iti__country-name {
+    font-size: 1rem;
+  }
+
+  .iti__dial-code {
+    font-size: 1rem;
+  }
+
+  .iti__country-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .header__logo-mob {
