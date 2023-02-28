@@ -5029,6 +5029,18 @@ button:disabled {
         -ms-transform: translateX(40px);
             transform: translateX(40px);
   }
+
+  .choose__block:hover .subtitle-chose-one {
+    -webkit-transform: translateX(40px);
+        -ms-transform: translateX(40px);
+            transform: translateX(40px);
+  }
+
+  .choose__block:hover .subtitle-chose-two {
+    -webkit-transform: translateX(40px);
+        -ms-transform: translateX(40px);
+            transform: translateX(40px);
+  }
 }
 
 @media (min-width: 1366px) {
@@ -9004,18 +9016,6 @@ button:disabled {
   .top-footer__icon:hover {
     -webkit-filter: invert(6%) sepia(30%) saturate(842%) hue-rotate(169deg) brightness(98%) contrast(94%);
             filter: invert(6%) sepia(30%) saturate(842%) hue-rotate(169deg) brightness(98%) contrast(94%);
-  }
-
-  .choose__block:hover .subtitle-chose-one {
-    -webkit-transform: translateX(40px);
-        -ms-transform: translateX(40px);
-            transform: translateX(40px);
-  }
-
-  .choose__block:hover .subtitle-chose-two {
-    -webkit-transform: translateX(40px);
-        -ms-transform: translateX(40px);
-            transform: translateX(40px);
   }
 }
 
