@@ -5064,15 +5064,15 @@
         }));
         const input = document.querySelector("#phone");
         intl_tel_input(input, {
-            singleDialCode: true,
-            preferenceCountries: [ "us", "gb", "ua" ],
-            autoPlaceholder: "aggressive"
+            placeholderNumberType: "MOBILE",
+            preferredCountries: [ "ua", "us" ],
+            separateDialCode: true
         });
         const input2 = document.querySelector("#phone_2");
         intl_tel_input(input2, {
-            singleDialCode: true,
-            preferenceCountries: [ "us", "gb", "ua" ],
-            autoPlaceholder: "aggressive"
+            placeholderNumberType: "MOBILE",
+            preferredCountries: [ "ua", "us" ],
+            separateDialCode: true
         });
         window["FLS"] = true;
         isWebp();

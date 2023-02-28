@@ -2397,6 +2397,24 @@ button:disabled {
   grid-template-columns: auto 1fr auto;
 }
 
+.iti__selected-dial-code {
+  font-family: "GT", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: #101820;
+  padding-top: 2px;
+}
+
+.iti--separate-dial-code .iti__selected-flag {
+  background-color: unset;
+}
+
+.iti--separate-dial-code .iti__selected-dial-code {
+  margin-left: 0.75rem;
+}
+
 .iti__country-name {
   font-family: "GT", sans-serif;
   font-style: normal;
@@ -2444,14 +2462,6 @@ button:disabled {
   padding: 0.6875rem 0.75rem 0.6875rem 0.75rem;
 }
 
-.iti__selected-flag {
-  padding: 0;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
 .iti__selected-flag .iti__flag {
   -o-object-fit: cover;
      object-fit: cover;
@@ -2471,18 +2481,21 @@ button:disabled {
 }
 
 .iti__country-list {
+  position: absolute;
   max-height: 30rem;
   background: #FFFFFF;
   -webkit-box-shadow: 0px 0px 1.5625rem rgba(123, 148, 157, 0.5);
           box-shadow: 0px 0px 1.5625rem rgba(123, 148, 157, 0.5);
   border-radius: 0.3125rem;
   border: unset;
-  top: 2.375rem;
-  left: -0.75rem;
+  top: 2.875rem;
+  left: 0.125rem;
   white-space: unset;
   width: 26.875rem;
   z-index: 5;
+  overflow-y: scroll;
   -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .iti__country-list::-webkit-scrollbar {
@@ -5465,7 +5478,7 @@ button:disabled {
   }
 
   .iti__country-list {
-    left: -0.625rem;
+    left: 0.3125rem;
     width: 34.0625rem;
   }
 
@@ -5883,6 +5896,7 @@ button:disabled {
   }
 
   .iti__country-list {
+    left: 0.1875rem;
     max-width: 26.5625rem;
   }
 }
