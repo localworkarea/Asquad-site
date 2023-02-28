@@ -1536,7 +1536,7 @@
   font-display: swap;
   src: url("../fonts/GT-Walsheim-LC-Bold-Oblique.woff2") format("woff2"), url("../fonts/GT-Walsheim-LC-Bold-Oblique.woff") format("woff");
   font-weight: 700;
-  font-style: normal;
+  font-style: italic;
 }
 
 @font-face {
@@ -1552,7 +1552,7 @@
   font-display: swap;
   src: url("../fonts/GT-Walsheim-LC-Medium-Oblique.woff2") format("woff2"), url("../fonts/GT-Walsheim-LC-Medium-Oblique.woff") format("woff");
   font-weight: 500;
-  font-style: normal;
+  font-style: italic;
 }
 
 @font-face {
@@ -1568,7 +1568,7 @@
   font-display: swap;
   src: url("../fonts/GT-Walsheim-LC-Regular-Oblique.woff2") format("woff2"), url("../fonts/GT-Walsheim-LC-Regular-Oblique.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
+  font-style: italic;
 }
 
 @font-face {
@@ -1828,11 +1828,16 @@ h6 {
 }
 
 .btn-black {
-  background-color: #F0F4F5;
-  color: #BCCCD1;
+  background-color: #101820;
+  color: white;
   -webkit-transition: font-family 0.1s linear, background-color 0.2s ease;
   -o-transition: font-family 0.1s linear, background-color 0.2s ease;
   transition: font-family 0.1s linear, background-color 0.2s ease;
+}
+
+.btn-black:disabled:hover {
+  background-color: #F0F4F5;
+  color: #BCCCD1;
 }
 
 .btn-black:hover {
@@ -1846,7 +1851,6 @@ h6 {
   padding-left: 1rem;
   color: #EB0075;
   font-weight: 400;
-  font-family: sans-serif;
   font-size: 1rem;
   line-height: 1.125;
   position: absolute;
@@ -1976,7 +1980,6 @@ h6 {
 .form__label {
   color: #7B949D;
   font-weight: 400;
-  font-family: sans-serif;
   font-size: 1.125rem;
   line-height: 1.1111111111;
   margin-bottom: 0.125rem;
@@ -2438,7 +2441,7 @@ button:disabled {
 }
 
 .iti__flag-container {
-  margin: 0.75rem 0.5rem 0.75rem 1rem;
+  padding: 0.6875rem 0.75rem 0.6875rem 0.75rem;
 }
 
 .iti__selected-flag {
@@ -2845,7 +2848,6 @@ button:disabled {
 .bttm-footer__tech {
   font-size: 0.875rem;
   font-weight: 400;
-  font-family: sans-serif;
   line-height: 1.1428571429;
   text-align: right;
   color: #7B949D;
@@ -2989,7 +2991,6 @@ button:disabled {
 
 .integrations__text {
   font-weight: 400;
-  font-family: sans-serif;
   line-height: 1.0833333333;
   color: #BCCCD1;
 }
@@ -3917,7 +3918,6 @@ button:disabled {
 
 .slide-product__text .text-regular {
   font-weight: 400;
-  font-family: sans-serif;
 }
 
 .slide-product__label {
@@ -4116,7 +4116,8 @@ button:disabled {
 }
 
 .request {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: #F0F4F5;
 }
 
@@ -6099,7 +6100,9 @@ button:disabled {
   }
 
   .api__typing-line {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     z-index: 3;
     position: absolute;
     bottom: 0;
@@ -6948,6 +6951,11 @@ button:disabled {
     height: 1.875rem;
   }
 
+  .form__error {
+    font-size: 0.875rem;
+    bottom: -1.125rem;
+  }
+
   .form__block:not(:last-child) {
     margin-bottom: 2.625rem;
   }
@@ -6988,7 +6996,7 @@ button:disabled {
   }
 
   .iti__flag-container {
-    margin: 0.4375rem 0.5rem 0.4375rem 0.5rem;
+    padding: 0.4375rem 0.5rem 0.4375rem 0.5rem;
   }
 
   .menu__link {

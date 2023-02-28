@@ -2024,7 +2024,6 @@
             _openToHash() {
                 let classInHash = document.querySelector(`.${window.location.hash.replace("#", "")}`) ? `.${window.location.hash.replace("#", "")}` : document.querySelector(`${window.location.hash}`) ? `${window.location.hash}` : null;
                 const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash.replace(".", "#")}"]`);
-                this.youTubeCode = buttons.getAttribute(this.options.youtubeAttribute) ? buttons.getAttribute(this.options.youtubeAttribute) : null;
                 if (buttons && classInHash) this.open(classInHash);
             }
             _setHash() {
@@ -2146,6 +2145,10 @@
                 return error;
             },
             addError(formRequiredItem) {
+                const itemFormPhone = document.querySelectorAll(".item-form-phone");
+                itemFormPhone.forEach((item => {
+                    item.classList.add("_form-error");
+                }));
                 formRequiredItem.classList.add("_form-error");
                 formRequiredItem.parentElement.classList.add("_form-error");
                 document.getElementById("btn-part-submit").disabled = true;
@@ -2155,6 +2158,10 @@
                 if (formRequiredItem.dataset.error) formRequiredItem.parentElement.insertAdjacentHTML("beforeend", `<div class="form__error">${formRequiredItem.dataset.error}</div>`);
             },
             removeError(formRequiredItem) {
+                const itemFormPhone = document.querySelectorAll(".item-form-phone");
+                itemFormPhone.forEach((item => {
+                    item.classList.remove("_form-error");
+                }));
                 formRequiredItem.classList.remove("_form-error");
                 document.getElementById("btn-part-submit").disabled = false;
                 document.getElementById("btn-req-submit").disabled = false;
