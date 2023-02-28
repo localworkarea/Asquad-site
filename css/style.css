@@ -2115,6 +2115,12 @@ button:disabled {
 .no-webp .iti__flag{
   background-image: url("../img/flags/flags.png"); }
 
+.iti__flag {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
 .fp-init body {
   overflow: hidden;
   -ms-touch-action: none;
@@ -8986,6 +8992,12 @@ button:disabled {
 
   .no-webp .iti__flag{
     background-image: url("../img/flags/flags@2x.png"); }
+
+  .iti__flag {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+  }
 }
 
 @media (any-hover: hover) {

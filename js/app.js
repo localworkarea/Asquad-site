@@ -638,7 +638,7 @@
                                     var dialCode = this.selectedCountryData.dialCode ? "+".concat(this.selectedCountryData.dialCode) : "";
                                     this.selectedDialCode.innerHTML = dialCode;
                                     var selectedFlagWidth = this.selectedFlag.offsetWidth || this._getHiddenSelectedFlagWidth();
-                                    this.telInput.style.paddingLeft = "".concat(selectedFlagWidth + 6, "px");
+                                    this.telInput.style.paddingLeft = "".concat(selectedFlagWidth + 13, "px");
                                 }
                                 this._updatePlaceholder();
                                 if (this.options.allowDropdown) {
