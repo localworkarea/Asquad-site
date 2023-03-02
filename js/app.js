@@ -297,7 +297,7 @@
                                     var c = countries[i];
                                     var idSuffix = preferred ? "-preferred" : "";
                                     tmp += "<li class='iti__country ".concat(className, "' tabIndex='-1' id='iti-").concat(this.id, "__item-").concat(c.iso2).concat(idSuffix, "' role='option' data-dial-code='").concat(c.dialCode, "' data-country-code='").concat(c.iso2, "' aria-selected='false'>");
-                                    tmp += "<div class='iti__flag-box'><div class='iti__flag iti__".concat(c.iso2, "'></div></div>");
+                                    tmp += "<div class='iti__flag-box'><div class='flag-wrap'><div class='iti__flag iti__".concat(c.iso2, "'></div></div></div>");
                                     tmp += "<span class='iti__country-name'>".concat(c.name, "</span>");
                                     tmp += "<span class='iti__dial-code'>+".concat(c.dialCode, "</span>");
                                     tmp += "</li>";
@@ -2116,6 +2116,27 @@
                     }
                     targetElement.hasAttribute("data-validate") ? formValidate.validateInput(targetElement) : null;
                 }
+            }));
+            const formBlocks = document.querySelectorAll(".form__block");
+            formBlocks.forEach((item => {
+                item.addEventListener("keyup", (function(e) {
+                    const targetElement = e.target;
+                    if (targetElement.value.length > 0) targetElement.parentElement.classList.add("_show-reset-btn"); else targetElement.parentElement.classList.remove("_show-reset-btn");
+                }));
+            }));
+            const itemFormPhone = document.querySelectorAll(".item-form-phone");
+            itemFormPhone.forEach((item => {
+                item.addEventListener("keyup", (function(e) {
+                    const targetElement = e.target;
+                    if (targetElement.value.length > 0) {
+                        const itemFormPhone = document.querySelectorAll(".item-form-phone");
+                        itemFormPhone.forEach((item => {
+                            item.classList.add("_show-reset-btn");
+                        }));
+                    } else itemFormPhone.forEach((item => {
+                        item.classList.remove("_show-reset-btn");
+                    }));
+                }));
             }));
         }
         let formValidate = {
@@ -4488,11 +4509,14 @@
                     if (targetElement.classList.contains("_header-hidden")) document.documentElement.classList.add("header-hidden");
                     if (targetElement.classList.contains("_header-black")) document.documentElement.classList.add("header-black");
                     if (targetElement.classList.contains("_header-white")) document.documentElement.classList.remove("header-black");
+                    if (targetElement.classList.contains("footer__bottom")) {
+                        const headerItem = document.querySelector(".header");
+                        headerItem.classList.add("hide-header");
+                    }
                     const animSlide = document.querySelector(".image-anim");
                     if (targetElement.classList.contains("main")) animSlide.classList.add("_anim-main");
                     if (targetElement.classList.contains("focus")) animSlide.classList.add("_anim-focus");
                     if (targetElement.classList.contains("integrations")) animSlide.classList.add("_anim-integrations");
-                    if (targetElement.classList.contains("api")) ;
                 } else {
                     targetElement.classList.contains("_watcher-view") ? targetElement.classList.remove("_watcher-view") : null;
                     if (targetElement.classList.contains("_header-hidden")) document.documentElement.classList.remove("header-hidden");
@@ -4500,6 +4524,10 @@
                     if (targetElement.classList.contains("focus")) animSlide.classList.remove("_anim-focus");
                     if (targetElement.classList.contains("integrations")) animSlide.classList.remove("_anim-integrations");
                     if (targetElement.classList.contains("main")) animSlide.classList.remove("_anim-main");
+                    if (targetElement.classList.contains("footer__bottom")) {
+                        const headerItem = document.querySelector(".header");
+                        headerItem.classList.remove("hide-header");
+                    }
                 }
             }
             scrollWatcherOff(targetElement, observer) {
@@ -5054,6 +5082,10 @@
         function resetInput() {
             document.querySelectorAll("form")[1].reset();
             document.querySelectorAll("form")[0].reset();
+            const formItems = document.querySelectorAll(".form__item");
+            formItems.forEach((item => {
+                item.classList.remove("_show-reset-btn");
+            }));
         }
         var $is_typed_call = false;
         document.addEventListener("watcherCallback", (function(e) {
