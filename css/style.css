@@ -4983,7 +4983,7 @@ textarea:focus {
 
 @media (min-width: 1200px) {
   .options__block .block-info {
-    margin-bottom: 12.5rem;
+    margin-bottom: 12.5625rem;
   }
 
   .api__container {
