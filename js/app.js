@@ -5092,7 +5092,7 @@
             if (e.detail.entry.target.classList.contains("api") && e.detail.entry.isIntersecting) if (!$is_typed_call) {
                 new lib_typed("#typed", {
                     stringsElement: "#typed-strings",
-                    typeSpeed: 5,
+                    typeSpeed: 3,
                     loop: false,
                     loopCount: 1 / 0,
                     showCursor: false
@@ -5112,6 +5112,17 @@
             preferredCountries: [ "ua", "us" ],
             separateDialCode: true
         });
+        if (document.documentElement.clientWidth < 768) setScrollItem();
+        function setScrollItem() {
+            const manageBody = document.querySelector(".anim-manage__body");
+            const optionsBody = document.querySelector(".btns-options__body");
+            manageBody.scrollIntoView({
+                inline: "center"
+            });
+            optionsBody.scrollIntoView({
+                inline: "center"
+            });
+        }
         window["FLS"] = true;
         isWebp();
         addTouchClass();
