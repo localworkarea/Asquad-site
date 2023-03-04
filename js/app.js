@@ -6667,12 +6667,14 @@
             const manageBody = document.querySelector(".anim-manage__body");
             const optionsBody = document.querySelector(".btns-options__body");
             manageBody.scrollIntoView({
-                inline: "center",
-                block: "end"
+                behavior: "auto",
+                block: "start",
+                inline: "center"
             });
             optionsBody.scrollIntoView({
-                inline: "center",
-                block: "end"
+                behavior: "auto",
+                block: "start",
+                inline: "center"
             });
         }
         window["FLS"] = true;
