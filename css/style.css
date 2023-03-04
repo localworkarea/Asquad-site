@@ -125,12 +125,22 @@ h6 {
   font-size: inherit;
 }
 
+body {
+  -webkit-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+
 .lock body {
   overflow: hidden;
   -ms-touch-action: none;
       touch-action: none;
   -ms-scroll-chaining: none;
       overscroll-behavior: none;
+}
+
+.loaded body {
+  opacity: 1;
 }
 
 .wrapper {
@@ -5034,7 +5044,6 @@ textarea:focus {
 
   .btns-options__logo {
     left: 50%;
-    height: 9.25rem;
   }
 
   .btns-options__body {
@@ -5497,7 +5506,7 @@ textarea:focus {
 
 @media (max-width: 29.875em) {
   .btns-options__logo {
-    height: 13.375rem;
+    height: 9.25rem;
   }
 }
 
@@ -7073,15 +7082,15 @@ textarea:focus {
 }
 
 @media (min-width: 29.875em) and (max-width: 48em) {
-@supports (height: clamp( 13.375rem , 13.375rem  +  0vw , 13.375rem )) {
+@supports (height: clamp( 9.25rem , 2.450862069rem  +  22.7586206897vw , 13.375rem )) {
     .btns-options__logo {
-      height: clamp( 13.375rem , 13.375rem  +  0vw , 13.375rem );
+      height: clamp( 9.25rem , 2.450862069rem  +  22.7586206897vw , 13.375rem );
     }
 }
 
-@supports not (height: clamp( 13.375rem , 13.375rem  +  0vw , 13.375rem )) {
+@supports not (height: clamp( 9.25rem , 2.450862069rem  +  22.7586206897vw , 13.375rem )) {
     .btns-options__logo {
-      height: calc(13.375rem + 0 * (100vw - 29.875rem) / 18.125);
+      height: calc(9.25rem + 4.125 * (100vw - 29.875rem) / 18.125);
     }
 }
 }
