@@ -6663,20 +6663,6 @@
                 $is_typed_call = true;
             }
         }));
-        if (window.innerWidth < 768) {
-            const manageBody = document.querySelector(".anim-manage__body");
-            const optionsBody = document.querySelector(".btns-options__body");
-            manageBody.scrollIntoView({
-                behavior: "auto",
-                block: "start",
-                inline: "center"
-            });
-            optionsBody.scrollIntoView({
-                behavior: "auto",
-                block: "start",
-                inline: "center"
-            });
-        }
         window["FLS"] = true;
         isWebp();
         addLoadedClass();
