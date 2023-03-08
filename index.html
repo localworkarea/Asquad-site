@@ -10,10 +10,11 @@
 			opacity: 0;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20230308083308">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230308182523">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js?_v=20230308182523"></script>
 </head>
 
 <body>
@@ -116,11 +117,15 @@
 				<div class="industries__container">
 					<div class="industries__block">
 						<div class="industries__body">
-							<h2 class="industries__title title-second">Across Industries</h2>
+							<h2 class="industries__title title-second"><span>Across</span> <span>Industries</span></h2>
 							<p class="industries__text text-second">
-								We use ready-made integrations
-								to accelerate your business expansion, adapting them to specific business needs.</p>
-							<p class="industries__text text-second">Plus, new payment integrations are completed several times faster</p>
+								<span class="anim-text">We use ready-made integrations</span>
+								<span class="anim-text">to accelerate your business</span>
+								<span class="anim-text">expansion, adapting them to</span>
+								<span class="anim-text">specific business needs.</span>
+								<span class="anim-text">Plus, new payment integrations</span>
+								<span class="anim-text">are completed several times faster</span>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -130,21 +135,33 @@
 			</section>
 			<section data-fp-section class="choose bg-blue">
 				<div class="choose__container">
-					<h2 class="choose__title text-second">Choose your path:</h2>
-					<div class="choose__content">
-						<div class="choose__block">
-							<div class="choose__head">
-								<img src="img/sections/section_6/1.svg" alt="logo" class="choose__img img-choose-one">
-								<h3 class="choose__subtitle subtitle-chose-one title-second">White Label</h3>
+					<h2 class="choose__title text-second"><span>Choose</span> <span>your</span> <span>path:</span></h2>
+					<div class="choose__content-wr">
+						<div class="choose__content">
+							<div class="choose__block">
+								<div class="choose__head">
+									<img src="img/icons/s-white.svg" alt="logo" class="choose__img img-choose-one">
+									<h3 class="choose__subtitle subtitle-chose-one title-second"><span>White</span> <span>Label</span></h3>
+								</div>
+								<div class="choose__text text-second text-choose-one">
+									<span>Leverage a <b>tailor-made payment</b></span>
+									<span><b>solution</b> to power your daily</span>
+									<span>operations with payments and</span>
+									<span>reduce development costs</span>
+								</div>
 							</div>
-							<div class="choose__text text-second">Leverage a <span>tailor-made payment solution</span> to power your daily operations with payments and reduce development costs</div>
-						</div>
-						<div class="choose__block">
-							<div class="choose__head">
-								<img src="img/sections/section_6/1.svg" alt="logo" class="choose__img img-choose-sec">
-								<h3 class="choose__subtitle subtitle-chose-two title-second">Payment Gateway</h3>
+							<div class="choose__block">
+								<div class="choose__head">
+									<img src="img/icons/s-white.svg" alt="logo" class="choose__img img-choose-sec">
+									<h3 class="choose__subtitle subtitle-chose-two title-second"><span>Payment</span> <span>Gateway</span></h3>
+								</div>
+								<div class="choose__text text-second text-choose-two">
+									<span><b>Become a proud partner of</b></span>
+									<span><b>ours,</b> then accept payments</span>
+									<span>and make payouts in a secure</span>
+									<span>efficient way</span>
+								</div>
 							</div>
-							<div class="choose__text text-second"><span>Become a proud partner of ours,</span> then accept payments and make payouts in a secure and efficient way</div>
 						</div>
 					</div>
 				</div>
@@ -843,6 +860,7 @@
 			.fls-preloader__images {
 				width: 40px;
 				height: 40px;
+				animation: spinner 0.3s linear 0.3s 10 normal none;
 			}
 
 			/* Блок з лічильником */
@@ -858,15 +876,15 @@
 				color: #BCCCD1;
 			}
 
-			/*
-		.fls-preloader__line{}
-		.fls-preloader__line span{
-			display: inline-block;
-			transition: width 0.2s ease;
-			height: 0.8rem;
-			background-color: #7A956B;
-		}
-		*/
+			@keyframes spinner {
+				0% {
+					transform: rotate(0deg);
+				}
+
+				100% {
+					transform: rotate(360deg);
+				}
+			}
 
 			@media (max-width: 479.98px) {
 				.fls-preloader__body {
@@ -943,13 +961,13 @@
 					}
 
 					function addLoadedClass() {
+						htmlDocument.classList.add('loaded');
 						htmlDocument.classList.remove('lock');
 						htmlDocument.classList.remove('loading');
 						setInterval(() => {
-							htmlDocument.classList.add('loaded');
-
+							preloader.remove();
 							preloaderContainer.remove();
-						}, 300);
+						}, 500);
 					}
 				} else {
 					preloaderContainer.remove();
@@ -958,7 +976,7 @@
 			preloader();
 		</script>
 	</div>
-	<script src="js/app.min.js?_v=20230308083308"></script>
+	<script src="js/app.min.js?_v=20230308182523"></script>
 </body>
 
 </html>
