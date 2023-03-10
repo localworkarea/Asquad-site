@@ -745,6 +745,11 @@ textarea:focus {
   height: 100%;
   pointer-events: none;
   overflow: hidden;
+  visibility: hidden;
+}
+
+.image-anim._anim-main {
+  visibility: visible;
 }
 
 .image-anim._anim-main .image-anim__img {
@@ -753,10 +758,18 @@ textarea:focus {
           transform: translate(11%, 18%);
 }
 
+.image-anim._anim-focus {
+  visibility: visible;
+}
+
 .image-anim._anim-focus .image-anim__img {
   -webkit-transform: translate(11%, -15%);
       -ms-transform: translate(11%, -15%);
           transform: translate(11%, -15%);
+}
+
+.image-anim._anim-integrations {
+  visibility: visible;
 }
 
 .image-anim._anim-integrations .image-anim__img {

@@ -10,11 +10,11 @@
 			opacity: 0;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20230308190142">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230310112302">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js?_v=20230308190142"></script>
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js?_v=20230310112302"></script>
 </head>
 
 <body>
@@ -45,7 +45,9 @@
 			</div>
 		</header>
 		<div class="image-anim">
-			<img src="img/animated.png" alt="image" class="image-anim__img">
+			<video preload="metadata" muted="muted" autoplay playsinline loop class="image-anim__img">
+				<source src="img/hero-2k10b.mp4" type="video/mp4">
+			</video>
 		</div>
 		<main class="page">
 			<section data-fp-section class="main _header-hidden bg-black">
@@ -812,7 +814,7 @@
 		}
 
 		.loaded body {
-			transition: opacity 0.7s ease 0s, background-color 0.3s ease 0s;
+			transition: opacity 0.8s ease 0s, background-color 0.3s ease 0s;
 			opacity: 1;
 			visibility: visible;
 		}
@@ -976,7 +978,7 @@
 			preloader();
 		</script>
 	</div>
-	<script src="js/app.min.js?_v=20230308190142"></script>
+	<script src="js/app.min.js?_v=20230310112302"></script>
 </body>
 
 </html>
