@@ -3599,6 +3599,7 @@
             }
         }
         flsModules.watcher = new ScrollWatcher({});
+        __webpack_require__(614);
         class FullPage {
             constructor(element, options) {
                 let config = {
@@ -3790,6 +3791,8 @@
                         if (!section.classList.contains("focus") && section.classList.contains("active-section")) imageAnim.classList.remove("_anim-focus");
                         if (section.classList.contains("integrations") && section.classList.contains("active-section")) imageAnim.classList.add("_anim-integrations");
                         if (!section.classList.contains("integrations") && section.classList.contains("active-section")) imageAnim.classList.remove("_anim-integrations");
+                        if (section.classList.contains("api") && section.classList.contains("active-section")) ;
+                        if (!section.classList.contains("api") && section.classList.contains("active-section")) ;
                     } else {
                         section.style.opacity = "0";
                         section.style.visibility = "hidden";
@@ -4062,7 +4065,6 @@
         }
         const da = new DynamicAdapt("max");
         da.init();
-        var lib_typed = __webpack_require__(614);
         const resetBtn = document.querySelectorAll(".reset-btn");
         resetBtn.forEach((item => {
             item.addEventListener("click", resetInput);
@@ -4075,19 +4077,6 @@
                 item.classList.remove("_show-reset-btn");
             }));
         }
-        var $is_typed_call = false;
-        document.addEventListener("watcherCallback", (function(e) {
-            if (e.detail.entry.target.classList.contains("api") && e.detail.entry.isIntersecting) if (!$is_typed_call) {
-                new lib_typed("#typed", {
-                    stringsElement: "#typed-strings",
-                    typeSpeed: 3,
-                    loop: false,
-                    loopCount: 1 / 0,
-                    showCursor: false
-                });
-                $is_typed_call = true;
-            }
-        }));
         window["FLS"] = true;
         isWebp();
         addTouchClass();
